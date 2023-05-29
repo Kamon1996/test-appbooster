@@ -1,0 +1,25 @@
+.entries-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  padding: 1em 2em;
+}
+
+.dairy {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 20px;
+  background-color: #2d845a1c;
+  flex: 1;
+}
+
+.dairy__new-form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  background-color: #95caec;
+  border-radius: 15px;
+  gap: 10px;
+}

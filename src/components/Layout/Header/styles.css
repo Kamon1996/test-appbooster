@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4em;
+  background-color: aquamarine;
+  gap: 4em;
+  padding: 1em 2em;
+}
+
+.header__nav {
+  display: flex;
+  flex: 1;
+  gap: 1.5em;
+}
+
+.header__nav .logo {
+  margin-right: auto;
+}
+
+.nav-link {
+  white-space: nowrap;
+  font-size: 1.2em;
+  color: maroon;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: cursive;
+}
+
+.header__profile {
+  display: flex;
+  align-items: center;
+  gap: 1.3em;
+}
