@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Header } from "./Header/Header";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { MyModal } from "../common/MyModal/MyModal";
 import { AuthForm } from "../AuthForm/AuthForm";
 import { onAuthStateChanged } from "firebase/auth";
@@ -10,8 +10,10 @@ import "./styles.css";
 
 export const Layout = () => {
   const [loginFormIsOpen, setLoginFormOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    navigate("/home");
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       if (!currentuser) return (userInfo.info.isFetched = false);
       const { uid, email } = currentuser;
