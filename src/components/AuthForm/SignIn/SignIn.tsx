@@ -3,6 +3,7 @@ import { MyButton } from "../../common/MyButton/MyButton";
 import { AuthFormState } from "../../../types/types";
 import { userInfo } from "../../../store/auth";
 import { MyInput } from "../../common/MyInput/MyInput";
+import { useNavigate } from "react-router-dom";
 
 interface ISignIn {
   setFormState: (formState: AuthFormState) => void;
@@ -15,6 +16,7 @@ const INIT_LOGIN_STATE = {
 };
 
 export const SignIn = ({ setFormState, setLoginFormOpen }: ISignIn) => {
+  const navigate = useNavigate();
   const [loginState, setLoginState] = useState(INIT_LOGIN_STATE);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +27,10 @@ export const SignIn = ({ setFormState, setLoginFormOpen }: ISignIn) => {
     e.preventDefault();
     if (!loginState.email || !loginState.password) return;
     const res = await userInfo.signIn(loginState);
-    res.user && setLoginFormOpen(false);
+    if (res.user) {
+      setLoginFormOpen(false);
+      navigate("/diary");
+    }
   };
 
   return (

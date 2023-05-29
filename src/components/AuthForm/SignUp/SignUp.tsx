@@ -3,6 +3,7 @@ import { MyButton } from "../../common/MyButton/MyButton";
 import { AuthFormState } from "../../../types/types";
 import { userInfo } from "../../../store/auth";
 import { MyInput } from "../../common/MyInput/MyInput";
+import { useNavigate } from "react-router-dom";
 
 interface ISignUp {
   setFormState: (formState: AuthFormState) => void;
@@ -10,13 +11,18 @@ interface ISignUp {
 }
 
 export const SignUp = ({ setFormState, setLoginFormOpen }: ISignUp) => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await userInfo.signUp({ email, password });
-    res.user && setLoginFormOpen(false);
+    if (res.user) {
+      setLoginFormOpen(false);
+      navigate("/diary");
+    }
   };
 
   return (
