@@ -1,8 +1,8 @@
 import { MyButton } from "../../common/MyButton/MyButton";
 import { userInfo } from "../../../store/auth";
 import { observer } from "mobx-react-lite";
-import "./styles.css";
 import { Link } from "react-router-dom";
+import "./styles.css";
 
 interface IHeaderProps {
   setOpenLoginForm: (arg: boolean) => void;

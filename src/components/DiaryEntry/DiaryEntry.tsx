@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { DiaryEntryType } from "../../types/types";
 import { MyButton } from "../common/MyButton/MyButton";
 import { entries } from "../../store/entries";

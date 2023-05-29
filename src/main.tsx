@@ -1,12 +1,11 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import { initializeApp } from "firebase/app";
-import "./assets/null.css";
 import { getAuth } from "firebase/auth";
+import "./assets/null.css";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAQXIXad2k4Vc-wWDEO9KnWaOme3j31txQ",

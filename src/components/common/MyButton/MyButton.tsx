@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes } from "react";
 import { StyledButton } from "./MyButton.styles";
 import { StyledButtonProps } from "./MyButton.styles";
 

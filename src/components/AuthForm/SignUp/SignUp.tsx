@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MyButton } from "../../common/MyButton/MyButton";
 import { AuthFormState } from "../../../types/types";
 import { userInfo } from "../../../store/auth";
